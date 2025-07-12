@@ -1,6 +1,6 @@
-resource "aws_db_parameter_group" "postgres_16" {
+resource "aws_db_parameter_group" "postgres" {
   family = "postgres16"
-  name = "${var.db_app_name}-pg16-param-group"
+  name = "${var.db_app_name}-pg-param-group"
 
   parameter {
     name = "ssl_min_protocol_version"
