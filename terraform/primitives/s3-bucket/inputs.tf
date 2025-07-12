@@ -37,3 +37,8 @@ variable "ownership_controls" {
     If "BucketOwnerEnforced" is defined, bucket ACL is disabled
   EOT
 }
+
+variable "versioning_enabled" {
+  type = bool
+  default = true
+}

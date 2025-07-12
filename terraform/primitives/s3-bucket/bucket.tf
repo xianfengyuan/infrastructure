@@ -33,3 +33,13 @@ resource "aws_s3_bucket_acl" "bucket" {
     aws_s3_bucket_ownership_controls.bucket
   ]
 }
+
+resource "aws_s3_bucket_versioning" "bucket" {
+  bucket = aws_s3_bucket.bucket
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+
+  count = var.versioning_enabled ? 1 : 0
+}
