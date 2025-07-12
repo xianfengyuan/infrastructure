@@ -1,5 +1,5 @@
 resource "aws_db_parameter_group" "postgres" {
-  family = "postgres16"
+  family = "postgres17"
   name = "${var.db_app_name}-pg-param-group"
 
   parameter {
