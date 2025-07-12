@@ -1,6 +1,6 @@
-resource "aws_db_parameter_group" "postgres_18" {
-  family = "postgres18"
-  name = "${var.db_app_name}-pg18-param-group"
+resource "aws_db_parameter_group" "postgres_16" {
+  family = "postgres16"
+  name = "${var.db_app_name}-pg16-param-group"
 
   parameter {
     name = "ssl_min_protocol_version"
@@ -12,4 +12,3 @@ resource "aws_db_parameter_group" "postgres_18" {
     value = "ddl,write"
   }
 }
-
