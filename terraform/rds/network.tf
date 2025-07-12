@@ -43,3 +43,8 @@ resource "aws_security_group" "db_internal_sg" {
     Name = "InternalSG@${local.deployment_name}"
   })
 }
+
+resource "aws_db_subnet_group" "db_subnet_group" {
+  name       = "DBSubnetGrp@${local.deployment_name}"
+  subnet_ids = var.db_subnets
+}
