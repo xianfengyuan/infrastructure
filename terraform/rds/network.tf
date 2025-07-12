@@ -36,7 +36,7 @@ resource "aws_security_group" "db_internal_sg" {
     protocol = "tcp"
     from_port = 5432
     to_port = 5432
-    cidr_blocks = ["10.0.0.0/20", "10.0.16.0/20", "10.0.32.0/20"]
+    cidr_blocks = ["10.0.0.0/16"]
   }
 
   tags = merge(var.additional_tags, {
