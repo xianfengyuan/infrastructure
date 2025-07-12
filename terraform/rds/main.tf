@@ -20,6 +20,7 @@ resource "aws_db_instance" "rds_db" {
 
   parameter_group_name = var.db_parameter_group_name
   allocated_storage = var.allocated_storage
+  skip_final_snapshot = var.skip_final_snapshot
 
   tags = local.tags
 
