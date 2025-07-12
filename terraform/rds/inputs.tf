@@ -41,3 +41,8 @@ variable "allocated_storage" {
   type = number
   default = 10
 }
+
+variable "skip_final_snapshot" {
+  type = bool
+  default = true
+}
