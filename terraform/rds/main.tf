@@ -19,6 +19,7 @@ resource "aws_db_instance" "rds_db" {
   password = var.password
 
   parameter_group_name = var.db_parameter_group_name
+  allocated_storage = var.allocated_storage
 
   tags = local.tags
 

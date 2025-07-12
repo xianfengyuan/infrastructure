@@ -36,3 +36,8 @@ variable "instance_class" {
   type = string
   default = "db.t3.small"
 }
+
+variable "allocated_storage" {
+  type = number
+  default = 10
+}
