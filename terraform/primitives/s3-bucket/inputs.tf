@@ -42,3 +42,13 @@ variable "versioning_enabled" {
   type = bool
   default = true
 }
+
+variable "s3_encryption_key_alias" {
+  type = string
+  default = ""
+}
+
+variable "encryption_enabled" {
+  type = bool
+  default = true
+}

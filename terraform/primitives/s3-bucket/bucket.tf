@@ -1,3 +1,8 @@
+data "aws_kms_alias" "s3" {
+  name = var.s3_encryption_key_alias
+  count = var.s3_encryption_key_alias == "" ? 0 : 1
+}
+
 locals {
   tags = merge(
     var.tags,
@@ -42,4 +47,17 @@ resource "aws_s3_bucket_versioning" "bucket" {
   }
 
   count = var.versioning_enabled ? 1 : 0
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "bucket" {
+  bucket = aws_s3_bucket.bucket.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = var.s3_encryption_key_alias != "" ? "aws:kms" : "AES256"
+      kms_master_key_id =  var.s3_encryption_key_alias != "" ? data.aws_kms_alias.s3[0].arn : null
+    }
+    bucket_key_enabled = var.s3_encryption_key_alias != "" ? true : null
+  }
+  count = var.encryption_enabled ? 1 : 0
 }
