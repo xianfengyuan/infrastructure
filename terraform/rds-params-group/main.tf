@@ -1,4 +1,4 @@
-resource "aws_db_parameter_group" "psotgres_18" {
+resource "aws_db_parameter_group" "postgres_18" {
   family = "postgres18"
   name = "${var.db_app_name}-pg18-param-group"
 
