@@ -31,3 +31,8 @@ variable "password" {
 variable "db_parameter_group_name" {
   type = string
 }
+
+variable "instance_class" {
+  type = string
+  default = "db.t3.small"
+}

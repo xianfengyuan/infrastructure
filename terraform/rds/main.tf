@@ -12,7 +12,7 @@ locals {
 }
 
 resource "aws_db_instance" "rds_db" {
-  instance_class = var.mode != "prod" ? "db.t3.small" : "db.m5.large"
+  instance_class = var.instance_class
   identifier = "${local.deployment_name}-db"
   engine = "postgres"
   username = var.username
