@@ -45,6 +45,6 @@ resource "aws_security_group" "db_internal_sg" {
 }
 
 resource "aws_db_subnet_group" "db_subnet_group" {
-  name       = "DBSubnetGrp@${local.deployment_name}"
+  name       = "db_subnet_grp_${local.deployment_name}"
   subnet_ids = var.db_subnets
 }
