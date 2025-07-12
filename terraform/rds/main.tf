@@ -20,7 +20,7 @@ resource "aws_db_instance" "rds_db" {
   allocated_storage = var.allocated_storage
   skip_final_snapshot = var.skip_final_snapshot
 
-  db_subnet_group_name = aws_db_subnet_group.db_subnet_group
+  db_subnet_group_name = aws_db_subnet_group.db_subnet_group.name
   vpc_security_group_ids = [aws_security_group.db_base_sg.id, aws_security_group.db_internal_sg.id]
 
   tags = local.tags
